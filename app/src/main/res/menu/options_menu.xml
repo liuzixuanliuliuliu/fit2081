@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Add Item option, always shown on the toolbar -->
+    <item android:id="@+id/menu_add_item"
+        android:title="Add Item"
+        app:showAsAction="ifRoom" />
+
+    <!-- Clear All Fields option, shown in the overflow menu -->
+    <item android:id="@+id/menu_clear_fields"
+        android:title="Clear All Fields"
+        app:showAsAction="never" />
+
+</menu>

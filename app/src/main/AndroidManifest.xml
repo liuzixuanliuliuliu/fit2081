@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fit2081.fit2081assigment1final">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Fit2081assigment1final"
+        android:usesCleartextTraffic="true"> <!-- Consider if your app needs to communicate over HTTP -->
+
+        <!-- Replace with your actual Google Maps API key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_ACTUAL_API_KEY_HERE"/>
+
+        <!-- DashboardActivity is the main activity with the navigation drawer -->
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true"> <!-- Ensure this activity is accessible as the entry point -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activity for listing all saved invoices, started from the DashboardActivity -->
+        <activity
+            android:name=".SavedInvoicesActivity"
+            android:exported="false" /> <!-- Set to false if you don't want this activity to be directly accessible by other apps -->
+
+        <!-- Activity to display Wikipedia pages -->
+        <activity
+            android:name=".WebWikiActivity"
+            android:exported="false" /> <!-- Set to false if you don't want this activity to be directly accessible by other apps -->
+
+        <!-- Activity to display Google Maps -->
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" /> <!-- Set to false if you don't want this activity to be directly accessible by other apps -->
+
+        <!-- Add other activities and components as needed -->
+
+    </application>
+</manifest>

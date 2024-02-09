@@ -25,10 +25,10 @@
         <activity
             android:name=".DashboardActivity"
             android:exported="true"> <!-- Ensure this activity is accessible as the entry point -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <!-- Activity for listing all saved invoices, started from the DashboardActivity -->
@@ -44,7 +44,15 @@
         <!-- Activity to display Google Maps -->
         <activity
             android:name=".MapsActivity"
-            android:exported="false" /> <!-- Set to false if you don't want this activity to be directly accessible by other apps -->
+            android:exported="false" />
+        <activity android:name=".TestActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Set to false if you don't want this activity to be directly accessible by other apps -->
 
         <!-- Add other activities and components as needed -->
 

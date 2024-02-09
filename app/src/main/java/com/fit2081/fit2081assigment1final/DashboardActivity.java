@@ -316,9 +316,22 @@ public class DashboardActivity extends AppCompatActivity implements
     private void setupGestureDetection() {
         gestureDetector = new GestureDetectorCompat(this, new GestureListener());
         View touchpadView = findViewById(R.id.touchpad_area); // Corrected to View
-        touchpadView.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
+        touchpadView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gestureDetector.onTouchEvent(event);
+                return true;
+            }
+        });
+//        touchpadView.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // 将触摸事件传递给 GestureDetector 处理
+        gestureDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
 
     private void setupViewModelAndObservers() {
         invoiceViewModel = new ViewModelProvider(this).get(InvoiceViewModel.class);

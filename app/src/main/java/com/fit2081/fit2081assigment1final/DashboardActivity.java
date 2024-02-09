@@ -45,7 +45,7 @@ import com.fit2081.fit2081assigment1final.provider.InvoiceViewModel;
 import com.fit2081.fit2081assigment1final.provider.Item;
 import com.fit2081.fit2081assigment1final.provider.Invoice;
 import com.google.android.material.snackbar.Snackbar;
-
+//注视
 public class DashboardActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener, InvoiceAdapter.OnInvoiceListener {
     private DrawerLayout drawerLayout;
@@ -60,7 +60,7 @@ public class DashboardActivity extends AppCompatActivity implements
     private List<Item> itemList = new ArrayList<>();
     private String currentInvoiceId;
 
-    private LinearLayout itemHeader,invoiceHeader;
+    private LinearLayout itemHeader;
     private RecyclerView rvInvoice;
 
 
@@ -136,7 +136,7 @@ public class DashboardActivity extends AppCompatActivity implements
         fab.setOnClickListener(view -> addInvoice());
 
         itemHeader = findViewById(R.id.itemHeader);
-        invoiceHeader = findViewById(R.id.invoiceHeader);
+
         txtInvoiceTotal = findViewById(R.id.tv_invoice_total);
         edtIssuerName = findViewById(R.id.edt_issuer_name);
         edtBuyerName = findViewById(R.id.edt_buyer_name);
@@ -245,7 +245,7 @@ public class DashboardActivity extends AppCompatActivity implements
 
         Invoice newInvoice = new Invoice(currentInvoiceId, issuerName, buyerName, buyerAddress, isPaid, calculateTotal());
         invoiceViewModel.insertInvoice(newInvoice);
-        invoiceHeader.setVisibility(View.VISIBLE);
+
         edtIssuerName.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -325,7 +325,7 @@ public class DashboardActivity extends AppCompatActivity implements
         currentInvoiceId = generateUniqueInvoiceId();
         invoiceViewModel.getAllInvoices().observe(this, invoices -> {
             invoiceAdapter.setInvoices(invoices);
-            invoiceHeader.setVisibility(View.VISIBLE);
+
         });
     }
 

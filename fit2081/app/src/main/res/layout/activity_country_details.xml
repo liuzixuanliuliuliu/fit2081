@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/country_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryDetails">
+
+    <!-- Country Name -->
+    <TextView
+        android:id="@+id/label_country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/country_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/value_country_name"
+        app:layout_constraintHorizontal_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/value_country_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        app:layout_constraintStart_toEndOf="@id/label_country_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_country_name"
+        app:layout_constraintBottom_toBottomOf="@id/label_country_name" />
+
+    <!-- Capital -->
+    <TextView
+        android:id="@+id/label_capital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/capital"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_country_name"
+        app:layout_constraintEnd_toStartOf="@id/value_capital" />
+
+    <TextView
+        android:id="@+id/value_capital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        app:layout_constraintStart_toEndOf="@id/label_capital"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_capital"
+        app:layout_constraintBottom_toBottomOf="@id/label_capital" />
+
+    <!-- Country Code -->
+    <TextView
+        android:id="@+id/label_country_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/country_code"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_capital"
+        app:layout_constraintEnd_toStartOf="@id/value_country_code" />
+
+    <TextView
+        android:id="@+id/value_country_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        app:layout_constraintStart_toEndOf="@id/label_country_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_country_code"
+        app:layout_constraintBottom_toBottomOf="@id/label_country_code" />
+
+    <!-- Population -->
+    <TextView
+        android:id="@+id/label_population"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/population"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_country_code"
+        app:layout_constraintEnd_toStartOf="@id/value_population" />
+
+    <TextView
+        android:id="@+id/value_population"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        app:layout_constraintStart_toEndOf="@id/label_population"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_population"
+        app:layout_constraintBottom_toBottomOf="@id/label_population" />
+
+    <!-- Area -->
+    <TextView
+        android:id="@+id/label_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_population"
+        app:layout_constraintEnd_toStartOf="@id/value_area" />
+
+    <TextView
+        android:id="@+id/value_area"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        app:layout_constraintStart_toEndOf="@id/label_area"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_area"
+        app:layout_constraintBottom_toBottomOf="@id/label_area" />
+
+    <!-- Additional fields can be added here following the same pattern -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

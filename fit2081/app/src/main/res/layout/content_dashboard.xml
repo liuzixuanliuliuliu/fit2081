@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+    <!-- ScrollView for the main content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fab_add_invoice"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Input field for Issuer Name -->
+            <EditText
+                android:id="@+id/edt_issuer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_issuer_name" />
+
+
+
+            <!-- Input field for Buyer Name -->
+            <EditText
+                android:id="@+id/edt_buyer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_buyer_name" />
+
+            <!-- Input field for Buyer Address -->
+            <EditText
+                android:id="@+id/edt_buyer_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_buyer_address" />
+
+            <!-- Switch for marking the invoice as Paid/Unpaid -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_is_paid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Is paid? " />
+
+            <!-- Input field for Item Name -->
+            <EditText
+                android:id="@+id/edt_Item_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_item_name" />
+
+            <Button
+                android:id="@+id/btn_search_wiki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/search_wiki" />
+
+            <!-- Input field for Item Quantity -->
+            <EditText
+                android:id="@+id/edt_Item_Quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_item_quantity" />
+
+            <!-- Input field for Item Cost -->
+            <EditText
+                android:id="@+id/edt_Item_Cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_item_cost" />
+
+            <!-- TextView for displaying the Invoice Total -->
+            <TextView
+                android:id="@+id/tv_invoice_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Invoice Total: 0.00"
+                android:gravity="center"
+                android:background="@color/design_default_color_secondary_variant"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:padding="16dp"
+                android:textColor="@android:color/white" />
+
+
+            <LinearLayout
+                android:padding="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/design_default_color_primary"
+                android:id="@+id/itemHeader"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="start"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:text="Name"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="#FFFFFF"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity"/>
+                <TextView
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Cost"/>
+            </LinearLayout>
+
+            <!-- RecyclerView for displaying the list of invoice items -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_invoice_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_invoice" />
+
+        <View
+            android:id="@+id/touchpad_area"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+
+
+
+            <!-- RecyclerView for displaying the list of saved invoices -->
+            <!-- Note: If this is not supposed to be in the same activity, remove it -->
+
+    <!-- <LinearLayout
+        android:padding="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/design_default_color_primary"
+        android:id="@+id/invoiceHeader"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="ID"/>
+        <TextView
+            android:gravity="start"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="Issuer"/>
+        <TextView
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:layout_height="wrap_content"
+            android:text="Buyer"/>
+        <TextView
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Total"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_saved_invoices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_saved_invoice" />
+
+</LinearLayout>-->
+        </LinearLayout>
+    </ScrollView>
+
+<!-- FAB for adding invoice -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/baseline_add_home_24"
+        app:tint="@android:color/white"
+        app:backgroundTint="@color/colorAccent" />
+
+</RelativeLayout>
+

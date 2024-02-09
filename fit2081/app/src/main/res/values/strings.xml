@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">fit2081assigment1final</string>
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="options_menu">Options menu</string>
+    <string name="add_item">Add Item</string>
+    <string name="assignment_2">Assignment-2</string>
+    <string name="nav_drawer_description">Open navigation drawer</string>
+    <string name="options_menu_description">More options</string>
+    <string name="title_assignment_2">Assignment-2</string>
+    <string name="hint_issuer_name">Issuer Name</string>
+    <string name="hint_buyer_name">Buyer Name</string>
+    <string name="hint_buyer_address">Buyer Address</string>
+    <string name="is_paid">Is Paid?</string>
+    <string name="hint_item_name">Item Name</string>
+    <string name="hint_item_quantity">Item Quantity</string>
+    <string name="hint_item_cost">Item Cost</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="invoice_total">Invoice Total: %1$.2f</string>
+    <string name="search_wiki">Search Wikipedia</string>
+    <string name="nav_maps">Maps</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_country_details">Country Details</string>
+    <string name="country_name">Country Name</string>
+    <string name="capital">Capital</string>
+    <string name="country_code">Country Code</string>
+    <string name="population">Population</string>
+    <string name="area">Area</string>
+
+
+
+
+
+</resources>

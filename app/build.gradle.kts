@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -36,8 +37,7 @@ dependencies {
     implementation("androidx.room:room-common:2.6.1")
     implementation ("com.google.code.gson:gson:2.10.1")
     implementation("androidx.room:room-runtime:2.6.1")
-    implementation("com.google.android.gms:play-services-maps:x.y.z")
-    implementation ("com.google.android.gms:play-services-maps:17.0.0")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
 
 
 
